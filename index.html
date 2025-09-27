@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Toty's Barbearia - Arte em Cada Corte | Campinas</title>
     <meta name="description" content="Toty's Barbearia em Campinas. Atendimento diferenciado e moderno desde 2019. Cortes masculinos, degradês, barba terapia e desenhos personalizados.">
     
@@ -11,7 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Script do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
+        /* Estilos customizados que continuam funcionando */
         * {
             margin: 0;
             padding: 0;
@@ -49,7 +53,7 @@
             -webkit-backdrop-filter: blur(10px);
                     backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Ajustado para melhor alinhamento do logo */
             transition: all 0.3s ease;
         }
 
@@ -62,21 +66,17 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-link { /* Renomeado de .logo para evitar conflito */
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-gold);
             text-decoration: none;
         }
 
-        .logo::before {
-            content: "⚔️";
-            margin-right: 0.5rem;
-            font-size: 1.8rem;
+        .logo-img { /* Nova classe para a imagem do logo */
+            height: 120px; /* Ajuste a altura conforme necessário */
+            width: auto;
         }
-
+        
         .nav-menu {
             display: flex;
             list-style: none;
@@ -192,15 +192,8 @@
             height: 3px;
             background: var(--accent-gold);
         }
-
+        
         /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
         .service-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
@@ -521,7 +514,11 @@
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <a href="#inicio" class="logo">Toty's Barbearia</a>
+            <!-- ** LOGO MODIFICADO AQUI ** -->
+            <a href="#inicio" class="logo-link">
+                <!-- O caminho 'src/assets/logototys.png' é relativo à pasta do seu projeto -->
+                <img src="/totysbarbearia/assets/logototys-gtkaR69e.png" alt="Logo Toty's Barbearia" class="logo-img">
+            </a>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#inicio">Início</a></li>
@@ -549,39 +546,34 @@
         </div>
     </section>
 
-<section id="servicos" class="bg-gray-100 py-16 lg:py-24">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Nossos Serviços</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-6xl mb-5">✂️</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Corte Masculino</h3>
-                <p class="text-gray-600 leading-relaxed">Do clássico ao moderno, garantimos um resultado impecável que realça sua personalidade e estilo único.</p>
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Corte Masculino</h3>
+                    <p>Do clássico ao moderno, nossos especialistas garantem um resultado impecável que realça sua personalidade e estilo único.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>Degradê / Fade</h3>
+                    <p>A técnica de degradê perfeita para um estilo afiado e contemporâneo. Transições suaves e precisas que destacam seu visual.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3>Barba Terapia</h3>
+                    <p>Modelagem, hidratação e toalha quente para uma barba de respeito. Cuidado completo para o homem moderno.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Desenhos e Riscos</h3>
+                    <p>Liberte sua criatividade com desenhos personalizados feitos à navalha. Arte capilar que expressa sua individualidade.</p>
+                </div>
             </div>
-
-            <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-6xl mb-5">🔥</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Degradê / Fade</h3>
-                <p class="text-gray-600 leading-relaxed">A técnica de degradê perfeita para um estilo afiado, com transições suaves e precisas que destacam seu visual.</p>
-            </div>
-
-            <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-6xl mb-5">🧔</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Barba Terapia</h3>
-                <p class="text-gray-600 leading-relaxed">Modelagem, hidratação e toalha quente para uma barba de respeito. Cuidado completo para o homem moderno.</p>
-            </div>
-
-            <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-6xl mb-5">🎨</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Desenhos e Riscos</h3>
-                <p class="text-gray-600 leading-relaxed">Liberte sua criatividade com desenhos personalizados à navalha. Uma arte capilar que expressa sua individualidade.</p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Gallery Section -->
     <section id="galeria" class="section">
@@ -704,19 +696,14 @@
             <h2>Termos de Serviço</h2>
             <p><strong>1. Aceitação dos Termos</strong></p>
             <p>Ao utilizar os serviços da Toty's Barbearia, você concorda com estes termos de serviço.</p>
-            
             <p><strong>2. Serviços Oferecidos</strong></p>
             <p>Oferecemos serviços de barbearia incluindo cortes de cabelo, barba, degradês e desenhos artísticos.</p>
-            
             <p><strong>3. Agendamentos</strong></p>
             <p>Os agendamentos devem ser feitos via WhatsApp. Cancelamentos devem ser comunicados com pelo menos 2 horas de antecedência.</p>
-            
             <p><strong>4. Pagamentos</strong></p>
             <p>Aceitamos dinheiro, cartão de débito e crédito. O pagamento deve ser realizado no momento do atendimento.</p>
-            
             <p><strong>5. Responsabilidade</strong></p>
             <p>Nossos profissionais são qualificados e seguem todas as normas sanitárias vigentes.</p>
-            
             <p><strong>6. Alterações</strong></p>
             <p>Estes termos podem ser alterados a qualquer momento, sendo comunicadas aos clientes.</p>
         </div>
@@ -729,19 +716,14 @@
             <h2>Política de Privacidade</h2>
             <p><strong>1. Coleta de Informações</strong></p>
             <p>Coletamos apenas informações necessárias para o agendamento e atendimento, como nome e telefone.</p>
-            
             <p><strong>2. Uso das Informações</strong></p>
             <p>Suas informações são utilizadas exclusivamente para agendamentos, comunicação sobre serviços e melhoramento do atendimento.</p>
-            
             <p><strong>3. Compartilhamento</strong></p>
             <p>Não compartilhamos suas informações pessoais com terceiros sem seu consentimento expresso.</p>
-            
             <p><strong>4. Segurança</strong></p>
             <p>Implementamos medidas de segurança adequadas para proteger suas informações pessoais.</p>
-            
             <p><strong>5. Seus Direitos</strong></p>
             <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais a qualquer momento.</p>
-            
             <p><strong>6. Contato</strong></p>
             <p>Para questões sobre privacidade, entre em contato conosco pelo WhatsApp (19) 98939-2380 ou email contato@totysbarbearia.com.br.</p>
         </div>
@@ -853,3 +835,4 @@
     </script>
 </body>
 </html>
+
